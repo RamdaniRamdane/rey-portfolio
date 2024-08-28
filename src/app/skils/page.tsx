@@ -10,8 +10,8 @@ function SkilsDisplay(){
     ))
     return(
         <div className={styles.gridContainer}>
-        {skils.map((skil)=>(
-            <div className={styles.gridItem}><Image src={skil} width={70} height={70} alt="skil" className={styles.icon} /></div>
+        {skils.map((skil , index)=>(
+            <div kay={index} className={styles.gridItem}><Image src={skil} width={70} height={70} alt="skil" className={styles.icon} /></div>
                   ))}
         </div>
     )
