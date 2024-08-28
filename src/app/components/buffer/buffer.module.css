@@ -1,0 +1,4 @@
+.bufferContainer {
+    height: 20px;
+    backdrop-filter: blur(8px);
+}
