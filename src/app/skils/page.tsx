@@ -11,7 +11,7 @@ function SkilsDisplay(){
     return(
         <div className={styles.gridContainer}>
         {skils.map((skil , index)=>(
-            <div kay={index} className={styles.gridItem}><Image src={skil} width={70} height={70} alt="skil" className={styles.icon} /></div>
+            <div key={index} className={styles.gridItem}><Image src={skil} width={70} height={70} alt="skil" className={styles.icon} /></div>
                   ))}
         </div>
     )
