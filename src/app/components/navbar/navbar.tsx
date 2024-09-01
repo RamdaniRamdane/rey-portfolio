@@ -17,7 +17,7 @@ function NavBar() {
   const route = usePathname();
   const pathname = route;
 
-  const handleKeyPress = useCallback((event: React.KeyboardEvent) => {
+  const handleKeyPress = useCallback((event) => {
     console.log(`Key pressed: ${event.key}`);
     event.key == "t" && handleLeftSideDisplay();
   }, []);
