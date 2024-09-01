@@ -1,15 +1,16 @@
 @import url("https://fonts.cdnfonts.com/css/common-pixel");
 
 .typingText {
-    font-size: 1.2rem;
-    font-family: "Space mono", monospace;
-    font-weight: 300;
-    display: flex;
-    flex-direction: column;
+  font-size: 1.2rem;
+  font-family: "Space mono", monospace;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
 }
 
 .typingText h3 {
-    color: red;
-    margin: auto;
-    margin-top: 30px;
+  color: red;
+  margin: auto;
+  margin-top: 30px;
 }
+

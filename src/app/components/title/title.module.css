@@ -1,10 +1,10 @@
-.text{
-    color: #aaa;
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin: auto;
+.text {
+  color: #aaa;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: auto;
 }
 
-.textColored{
-    color:red ;
+.textColored {
+  color: red;
 }

@@ -1,172 +1,174 @@
 .container {
-    display: flex;
-    border: solid 2px #88f;
-    border-radius: 10px;
-    height: calc(100vh - 40px);
-    overflow: hidden;
+  display: flex;
+  border: solid 2px #88f;
+  border-radius: 10px;
+  height: calc(100vh - 40px);
+  overflow: hidden;
 }
 .wrapper {
-    position: fixed;
-    z-index: -1;
+  position: fixed;
+  z-index: -1;
 }
 .wrapper span {
-    position: fixed;
-    bottom: -180px;
-    height: 50px;
-    width: 50px;
-    z-index: -1;
-    background-color: #18191f;
-    box-shadow:
-        0 0 50px #0072ff,
-        0 0 100px #0072ff,
-        0 0 150px #0072ff,
-        0 0 200px #0072ff;
-    animation: animate 10s linear infinite;
+  position: fixed;
+  bottom: -180px;
+  height: 50px;
+  width: 50px;
+  z-index: -1;
+  background-color: #18191f;
+  box-shadow:
+    0 0 50px #0072ff,
+    0 0 100px #0072ff,
+    0 0 150px #0072ff,
+    0 0 200px #0072ff;
+  animation: animate 10s linear infinite;
 }
 .wrapper span:nth-child(1) {
-    left: 60px;
-    animation-delay: 0.6s;
+  left: 60px;
+  animation-delay: 0.6s;
 }
 .wrapper span:nth-child(2) {
-    left: 10%;
-    animation-delay: 3s;
-    width: 60px;
-    height: 60px;
+  left: 10%;
+  animation-delay: 3s;
+  width: 60px;
+  height: 60px;
 }
 .wrapper span:nth-child(3) {
-    left: 20%;
-    animation-delay: 2s;
+  left: 20%;
+  animation-delay: 2s;
 }
 .wrapper span:nth-child(4) {
-    left: 30%;
-    animation-delay: 5s;
-    width: 80px;
-    height: 80px;
+  left: 30%;
+  animation-delay: 5s;
+  width: 80px;
+  height: 80px;
 }
 .wrapper span:nth-child(5) {
-    left: 40%;
-    animation-delay: 1s;
+  left: 40%;
+  animation-delay: 1s;
 }
 .wrapper span:nth-child(6) {
-    left: 50%;
-    animation-delay: 7s;
+  left: 50%;
+  animation-delay: 7s;
 }
 .wrapper span:nth-child(7) {
-    left: 60%;
-    animation-delay: 6s;
-    width: 100px;
-    height: 100px;
+  left: 60%;
+  animation-delay: 6s;
+  width: 100px;
+  height: 100px;
 }
 .wrapper span:nth-child(8) {
-    left: 70%;
-    animation-delay: 8s;
+  left: 70%;
+  animation-delay: 8s;
 }
 .wrapper span:nth-child(9) {
-    left: 80%;
-    animation-delay: 6s;
-    width: 90px;
-    height: 90px;
+  left: 80%;
+  animation-delay: 6s;
+  width: 90px;
+  height: 90px;
 }
 .wrapper span:nth-child(10) {
-    left: 90%;
-    animation-delay: 4s;
+  left: 90%;
+  animation-delay: 4s;
 }
 .banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 .content h2 b {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #fff;
-    font-family: montserrat;
-    font-size: 80px;
-    text-transform: uppercase;
-    letter-spacing: 12px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #fff;
+  font-family: montserrat;
+  font-size: 80px;
+  text-transform: uppercase;
+  letter-spacing: 12px;
 }
 @keyframes animate {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    80% {
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(-800px) rotate(360deg);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .leftSide {
-    width: 250px;
+  width: inherit;
 }
 
 .rightSide {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .vp {
-    display: flex;
-    flex-direction: row;
-    width: wrap;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  width: wrap;
+  height: inherit;
+  overflow: scroll;
 }
 
 .lineCounter {
-    width: 20px;
-    height: calc(100% - 20px);;
-    background: #080c1299;
-    backdrop-filter: blur(8px);
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    overflow: hidden;
+  width: inherit;
+  height: calc(100vh - 65px);
+  background: #080c1299;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  overflow: hidden;
+  padding: 0 5px 5px 5px;
 }
 
 .lineCounter p {
-    color: #888888;
+  color: #888888;
 }
 
 .displayContainer {
-    overflow: scroll;
-    background: #080c1299;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: start;
-    align-content: center;
-    text-align: center;
-    padding: 20px;
-    backdrop-filter: blur(8px);
+  overflow: scroll;
+  background: #080c1299;
+  height: calc(100vh - 65px);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  backdrop-filter: blur(8px);
 }
 
 .reyVimImg {
-    filter: grayscale(100%) brightness(80%) contrast(120%);
-    width: 100%;
-    height: 100%;
+  filter: grayscale(100%) brightness(80%) contrast(120%);
+  width: 100%;
+  height: 100%;
 }
 
 .reyVimImgContainer {
-    display: flex;
-    width: 100px;
-    margin: auto;
-    border-bottom: solid 1px #555;
+  display: flex;
+  width: 100px;
+  margin: auto;
+  border-bottom: solid 1px #555;
 }
 
 .card {
-    width: 600px;
-    height: 300px;
-    margin: auto;
-    margin-top: 20px;
-    border: double #aaa;
-    padding: 10px;
-    text-align: left;
+  width: 600px;
+  height: 300px;
+  margin: auto;
+  margin-top: 20px;
+  border: double #aaa;
+  padding: 10px;
+  text-align: left;
 }

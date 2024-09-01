@@ -1,61 +1,83 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.joinMe {
+  background: #080c1299;
+  backdrop-filter: blur(8px);
+}
+.hamburger {
+  height: calc(100vh - 65px);
+  margin: 12px 0 0 5px;
+}
+.icon {
+  margin: auto;
+  filter: invert(99%) sepia(0%) saturate(1576%) hue-rotate(-21deg)   brightness(0%) contrast(73%);
+}
+
+.icon:hover {
+
+  filter: invert(99%) sepia(0%) saturate(1576%) hue-rotate(-21deg)   brightness(100%) contrast(73%);
+}
 .leftSide {
-    background: #080c1299;
-    backdrop-filter: blur(8px);
-    height: 100vh;
-    width: 230px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  background: #080c1299;
+  backdrop-filter: blur(8px);
+  height: 100vh;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .links {
-    list-style-type: none;
-    cursor: pointer;
-    width: 100%;
+  list-style-type: none;
+  cursor: pointer;
+  width: 100%;
 }
 
 .logoContainer {
-    width: 100%;
-    padding: 0;
-    display: flex;
+  width: 100%;
+  padding: 0;
+  display: flex;
 }
 
 .logo {
-    font-family: "Space mono", monospace;
-    margin: auto;
-    font-size: 1.8rem;
-    font-weight: 200;
-    color: #eeeeee;
+  font-family: "Space mono", monospace;
+  margin: auto;
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: #eeeeee;
 }
 
 .folderName {
-    font-family: "Space mono", monospace;
-    color: #dddddd;
-    font-weight: 500;
-    padding: 5px 0px 0px 20px;
+  font-family: "Space mono", monospace;
+  color: #dddddd;
+  font-weight: 500;
+  padding: 5px 0px 0px 20px;
 }
 
 .pwdName {
-    color: #dddddd;
-    font-weight: 300;
-    font-style: italic;
-    margin-bottom: 5px;
+  color: #dddddd;
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 5px;
 }
 
 .pwdName:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .fileName {
-    padding: 5px 0px 5px 45px;
+  padding: 5px 0px 5px 45px;
 }
 
 .fileName:hover {
-    background: #191e2a;
+  background: #191e2a;
 }
 
 .fileNameA {
-    padding: 5px 0px 5px 45px;
-    background: #191e2a;
+  padding: 5px 0px 5px 45px;
+  background: #191e2a;
 }

@@ -1,8 +1,6 @@
 import styles from "./buffer.module.css";
 
 function Buffer() {
-  return (<div className={styles.bufferContainer}>
-           <p>buffer</p>
-       </div>)
+  return <div className={styles.bufferContainer}></div>;
 }
 export default Buffer;
