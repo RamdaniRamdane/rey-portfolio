@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback, useEffect, ReactDOM } from "react";
+import { useState, useCallback, useEffect } from "react";
 import styles from "./navbar.module.css";
 import { BiSolidFolder } from "react-icons/bi";
 import Link from "next/link";
@@ -17,15 +17,15 @@ function NavBar() {
   const route = usePathname();
   const pathname = route;
 
-  const handleKeyPress = useCallback((event) => {
+  const handleKeyPress = useCallback((event: KeyboardEvent) => {
     console.log(`Key pressed: ${event.key}`);
     event.key == "t" && handleLeftSideDisplay();
   }, []);
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyPress);
+    document.addEventListener("keydown", handleKeyPress );
     return () => {
-      document.removeEventListener("keydown", handleKeyPress);
+      document.removeEventListener("keydown", handleKeyPress );
     };
   }, [handleKeyPress]);
 
@@ -45,7 +45,7 @@ function NavBar() {
     setIndicatorHobies((a) => a * -1);
   }
 
-  const handleClick = (name) => (name === "About") ?  handleAboutClick() : ((name === "Projects") ? handleProjectsClick() : ((name === "Contact") ? handleContactClick() : handleHobiesClick()))
+  const handleClick = (name: string) => (name === "About") ?  handleAboutClick() : ((name === "Projects") ? handleProjectsClick() : ((name === "Contact") ? handleContactClick() : handleHobiesClick()))
 
   const AboutFiles = [
     { name: "index.html", path: "/" },
