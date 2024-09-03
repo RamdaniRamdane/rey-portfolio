@@ -9,7 +9,7 @@ import Image from "next/image"
 import icon from "../../../../public/node-tree-svgrepo-com.svg"
 
 function NavBar() {
-  const [indicatorLeftSide, setIndicatorLeftSide] = useState(-1);
+  const [indicatorLeftSide, setIndicatorLeftSide] = useState(1);
   const [indicatorAbout, setIndicatorAbout] = useState(1);
   const [indicatorProjects, setIndicatorProjects] = useState(1);
   const [indicatorContact, setIndicatorContact] = useState(1);
@@ -48,8 +48,7 @@ function NavBar() {
   const handleClick = (name: string) => (name === "About") ?  handleAboutClick() : ((name === "Projects") ? handleProjectsClick() : ((name === "Contact") ? handleContactClick() : handleHobiesClick()))
 
   const AboutFiles = [
-    { name: "index.html", path: "/" },
-    { name: "experience.css", path: "/experience" },
+    { name: "index.html", path: "/about" },
     { name: "skils.js", path: "/skils" },
     { name: "projects.json", path: "/projects" },
   ];
@@ -58,12 +57,12 @@ function NavBar() {
     { name: "file2", path: "/projects/file2" },
   ];
   const Contacts = [
-    { name: "file1", path: "/projects/file1" },
-    { name: "file2", path: "/projects/file2" },
+    { name: "file3", path: "/projects/file3" },
+    { name: "file4", path: "/projects/file4" },
   ];
   const Hobies = [
-    { name: "file1", path: "/projects/file1" },
-    { name: "file2", path: "/projects/file2" },
+    { name: "file4", path: "/projects/file5" },
+    { name: "file6", path: "/projects/file6" },
   ];
 
   const Folders = [
@@ -94,13 +93,12 @@ function NavBar() {
             <li className={styles.pwdName}>~/personal/portfolio{pathname}</li>
 
             {Folders.map((folder, index) => (
-              <>
+              <div key={index}>
                 <li
                   className={styles.folderName}
-                  onClick={()=>handleClick(folder.name)}
-                  key={index}
+                  onClick={()=>handleClick(folder.name)} 
                 >
-                  <BiSolidFolder /> {folder.name}
+                  <BiSolidFolder /> {folder.name} 
                 </li>
                 {folder.indicator > 0 && (
                   <>
@@ -121,7 +119,7 @@ function NavBar() {
                     ))}
                   </>
                 )}
-              </>
+              </div>
             ))}
           </ul>
         </div>
