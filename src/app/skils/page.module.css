@@ -23,13 +23,11 @@
   align-items: center;
 }
 
-
 .icon {
   margin: auto;
   filter: invert(99%) sepia(0%) saturate(1576%) hue-rotate(-21deg)
     brightness(80%) contrast(73%);
 }
-
 
 @keyframes rotate {
   0% {

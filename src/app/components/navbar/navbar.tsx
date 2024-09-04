@@ -5,8 +5,8 @@ import { BiSolidFolder } from "react-icons/bi";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image"
-import icon from "../../../../public/node-tree-svgrepo-com.svg"
+import Image from "next/image";
+import icon from "../../../../public/node-tree-svgrepo-com.svg";
 
 function NavBar() {
   const [indicatorLeftSide, setIndicatorLeftSide] = useState(1);
@@ -23,9 +23,9 @@ function NavBar() {
   }, []);
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyPress );
+    document.addEventListener("keydown", handleKeyPress);
     return () => {
-      document.removeEventListener("keydown", handleKeyPress );
+      document.removeEventListener("keydown", handleKeyPress);
     };
   }, [handleKeyPress]);
 
@@ -45,7 +45,14 @@ function NavBar() {
     setIndicatorHobies((a) => a * -1);
   }
 
-  const handleClick = (name: string) => (name === "About") ?  handleAboutClick() : ((name === "Projects") ? handleProjectsClick() : ((name === "Contact") ? handleContactClick() : handleHobiesClick()))
+  const handleClick = (name: string) =>
+    name === "About"
+      ? handleAboutClick()
+      : name === "Projects"
+        ? handleProjectsClick()
+        : name === "Contact"
+          ? handleContactClick()
+          : handleHobiesClick();
 
   const AboutFiles = [
     { name: "index.html", path: "/about" },
@@ -66,19 +73,19 @@ function NavBar() {
   ];
 
   const Folders = [
-    { name: "About", files: AboutFiles , indicator : indicatorAbout },
-    { name: "Projects", files: Projects , indicator : indicatorProjects},
-    { name: "Contact", files: Contacts , indicator : indicatorContact},
-    { name: "Hobbies", files: Hobies , indicator: indicatorHobies},
+    { name: "About", files: AboutFiles, indicator: indicatorAbout },
+    { name: "Projects", files: Projects, indicator: indicatorProjects },
+    { name: "Contact", files: Contacts, indicator: indicatorContact },
+    { name: "Hobbies", files: Hobies, indicator: indicatorHobies },
   ];
   return (
     <div className={styles.container}>
       <div className={styles.joinMe}>
         <div className={styles.hamburger} onClick={handleLeftSideDisplay}>
-            <Image
+          <Image
             src={icon}
-            width={20} 
-            height={20} 
+            width={20}
+            height={20}
             alt="tree"
             className={styles.icon}
           />
@@ -96,9 +103,9 @@ function NavBar() {
               <div key={index}>
                 <li
                   className={styles.folderName}
-                  onClick={()=>handleClick(folder.name)} 
+                  onClick={() => handleClick(folder.name)}
                 >
-                  <BiSolidFolder /> {folder.name} 
+                  <BiSolidFolder /> {folder.name}
                 </li>
                 {folder.indicator > 0 && (
                   <>
