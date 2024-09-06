@@ -2,9 +2,7 @@
   color: #aaa;
   font-size: 1.5rem;
   font-weight: 900;
-  position: absolute;
-  top:30px;
-  left:100px
+  margin: auto;
 }
 
 .textColored {

@@ -124,7 +124,7 @@
 
 
 .displayContainer {
-  overflow:hidden;
+  overflow:scroll;
   background: #080c1299;
   height: calc(100vh - 20px);
   width: 100%;

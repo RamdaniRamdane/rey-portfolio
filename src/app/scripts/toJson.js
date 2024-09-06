@@ -5,7 +5,7 @@ export function jsonSyntax(json, tabNumber) {
   const apostrof = `<span style="color:#999">&#34;</span>`;
   const coma = `<span style="color:#999">&#44;</span>`;
   const tab = `<span style="color:#fff1">----</span>`;
-
+  const twoPoits= `<span style="margin-right:5px; color:#eee">:</span>`
   let i = tabNumber;
   let result = `${leftCurlyBraket} </br> ${tab.repeat(i)}`;
   let umbdedJson = false;
@@ -16,7 +16,7 @@ export function jsonSyntax(json, tabNumber) {
       umbdedJson === true
         ? `${jsonSyntax(json[key], i+1 )}`
         : `${apostrof}<span style="color:#AAD94C ;">${json[key]}</span>${apostrof}`;
-    result += `${apostrof}<span style="color:#FF8F40;">${key}</span>${apostrof}:${res}${coma}</br> ${tab.repeat(i)}`;
+    result += `${apostrof}<span style="color:#FF8F40;">${key}</span>${apostrof}${twoPoits}${res}${coma}</br> ${tab.repeat(i)}`;
   });
   result += `${rightCurlyBraket}`;
   return result;

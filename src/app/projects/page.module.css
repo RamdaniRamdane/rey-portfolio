@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    margin-top: 55px;
+}
+
+.gridItem{
+    width: 400px;
+    height: 400px;
+    background: #11151C;
+    border-radius: 15px;
+    color: #eee;
+}

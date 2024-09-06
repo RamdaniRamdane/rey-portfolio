@@ -18,7 +18,7 @@ export default function about() {
                     <Image className={styles.img} src={reyImg} alt="rey" />
                 </div>
                 <div className={styles.textContainer}>
-                    <h1>Hi</h1>
+                    <h1>Hi &#128075;</h1>
                     <h3>i am Rey</h3>
                     <p>please dont look a lot on my pic and i use Arch btw ...</p>
                 </div>

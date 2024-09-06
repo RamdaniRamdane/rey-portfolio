@@ -1,20 +1,28 @@
 .gridContainer {
-  width: 100%;
+  width:100%;
   height: 100%;
   overflow: scroll;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   margin: auto;
-  gap: 50px;
-  margin-top: 50px;
+  gap: 10px;
+  margin-top: 55px;
   margin-bottom: 100px;
+  container-type:normal;
+}
+
+@container (min-width: 973px) {
+  .gridContainer {
+    grid-template-columns: repeat(5 ,1fr);
+  }
+
+  /* other CSS.. */
 }
 
 .gridItem {
   background: #080c1255;
-  backdrop-filter: blur(2px);
-  width: 110px;
-  height: 110px;
+  width: 130px;
+  height: 130px;
   margin: 10px;
   background: #11151C;
   border-radius: 15px;
@@ -26,6 +34,18 @@
 .icon {
   margin: auto;
   filter: invert(99%) sepia(0%) saturate(1576%) hue-rotate(-21deg)
-    brightness(80%) contrast(73%);
+    brightness(20%) contrast(73%);
 }
 
+
+
+
+
+.gridItem:hover{
+      box-shadow: 0 0 5px #ff8f40;
+    transition: .3s;
+}
+.gridItem:hover .icon{
+    filter: invert(100%) sepia(0%) saturate(1576%) hue-rotate(147deg) brightness(100%) contrast(80%);
+    transition: .3s;
+}
