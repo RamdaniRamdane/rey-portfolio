@@ -13,11 +13,11 @@
 .gridItem {
   background: #080c1255;
   backdrop-filter: blur(2px);
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   margin: 10px;
-  border: solid 1px #aaa;
-  border-radius: 5px;
+  background: #11151C;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,20 +29,3 @@
     brightness(80%) contrast(73%);
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  25% {
-    transform: rotateZ(90deg);
-  }
-  50% {
-    transform: rotateZ(180deg);
-  }
-  75% {
-    transform: rotateZ(270deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
-}

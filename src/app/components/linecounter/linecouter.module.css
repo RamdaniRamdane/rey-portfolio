@@ -1,0 +1,18 @@
+
+.lineCounter {
+  width: inherit;
+  height: calc(100vh - 20px);
+  background: #080c1299;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  overflow: hidden;
+  padding: 0 5px 5px 5px;
+}
+
+.lineCounter p {
+  color: #88888866;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif ;
+  font-size: 0.8rem;
+}

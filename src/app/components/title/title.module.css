@@ -2,9 +2,11 @@
   color: #aaa;
   font-size: 1.5rem;
   font-weight: 900;
-  margin: auto;
+  position: absolute;
+  top:30px;
+  left:100px
 }
 
 .textColored {
-  color: red;
+  color: #FF8F40;
 }

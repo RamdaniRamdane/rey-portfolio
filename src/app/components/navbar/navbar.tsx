@@ -80,17 +80,6 @@ function NavBar() {
   ];
   return (
     <div className={styles.container}>
-      <div className={styles.joinMe}>
-        <div className={styles.hamburger} onClick={handleLeftSideDisplay}>
-          <Image
-            src={icon}
-            width={20}
-            height={20}
-            alt="tree"
-            className={styles.icon}
-          />
-        </div>
-      </div>
       {indicatorLeftSide > 0 && (
         <div className={styles.leftSide}>
           <div className={styles.logoContainer}>
