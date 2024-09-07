@@ -1,4 +1,3 @@
-
 .lineCounter {
   width: inherit;
   height: calc(100vh - 20px);
@@ -13,6 +12,6 @@
 
 .lineCounter p {
   color: #88888866;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif ;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 0.8rem;
 }

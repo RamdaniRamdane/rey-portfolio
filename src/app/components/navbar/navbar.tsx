@@ -5,19 +5,17 @@ import { BiSolidFolder } from "react-icons/bi";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
-import hamburger from '../../../../public/ham.svg'
-import Image from 'next/image'
-
+import hamburger from "../../../../public/ham.svg";
+import Image from "next/image";
 
 function NavBar() {
-  const [indicatorLeftSide, setIndicatorLeftSide] = useState(1);
+  const [indicatorLeftSide, setIndicatorLeftSide] = useState(-1);
   const [indicatorAbout, setIndicatorAbout] = useState(1);
   const [indicatorProjects, setIndicatorProjects] = useState(1);
   const [indicatorContact, setIndicatorContact] = useState(1);
   const [indicatorHobies, setIndicatorHobies] = useState(1);
   const route = usePathname();
   const pathname = route;
-
   const handleKeyPress = useCallback((event: KeyboardEvent) => {
     event.key == "t" && handleLeftSideDisplay();
   }, []);
@@ -120,9 +118,12 @@ function NavBar() {
           </ul>
         </div>
       )}
-    <div className={(indicatorLeftSide > 0)? styles.buttonMove : styles.button} onClick={handleLeftSideDisplay}>
+      <div
+        className={indicatorLeftSide > 0 ? styles.buttonMove : styles.button}
+        onClick={handleLeftSideDisplay}
+      >
         <Image src={hamburger} alt="tree" width={20} height={20} />
-    </div>
+      </div>
     </div>
   );
 }

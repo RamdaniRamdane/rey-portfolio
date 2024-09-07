@@ -1,10 +1,10 @@
 .container {
   display: flex;
-/*  border: solid 2px #88f;*/
+  /*  border: solid 2px #88f;*/
   border-radius: 10px;
   height: calc(100vh - 20px);
 }
-  /*
+/*
 
 .wrapper {
   position: fixed;
@@ -119,12 +119,10 @@
   width: wrap;
   height: calc(100vh-20px);
   overflow: scroll;
-  
 }
 
-
 .displayContainer {
-  overflow:scroll;
+  overflow: scroll;
   background: #080c1299;
   height: calc(100vh - 20px);
   width: 100%;
@@ -160,4 +158,3 @@
   padding: 10px;
   text-align: left;
 }
-

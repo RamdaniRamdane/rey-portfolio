@@ -4,7 +4,7 @@ import "./globals.css";
 import NavBar from "./components/navbar/navbar";
 import Buffer from "./components/buffer/buffer";
 import styles from "./page.module.css";
-import LineCounter from "./components/linecounter/linecouter"
+import LineCounter from "./components/linecounter/linecouter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,7 +39,9 @@ export default function RootLayout({
             <Buffer />
             <div className={styles.vp}>
               <LineCounter />
-              <div id="display" className={styles.displayContainer}>{children}</div>
+              <div id="display" className={styles.displayContainer}>
+                {children}
+              </div>
             </div>
           </div>
         </main>

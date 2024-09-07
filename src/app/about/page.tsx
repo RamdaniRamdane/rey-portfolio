@@ -13,25 +13,25 @@ export default function about() {
       <Title text="About" textColored=" Me" />
       <div className={styles.cardContainer}>
         <div className={styles.left}>
-            <div className={styles.imageText}>
-                <div className={styles.imageContainer}>
-                    <Image className={styles.img} src={reyImg} alt="rey" />
-                </div>
-                <div className={styles.textContainer}>
-                    <h1>Hi &#128075;</h1>
-                    <h3>i am Rey</h3>
-                    <p>please dont look a lot on my pic and i use Arch btw ...</p>
-                </div>
+          <div className={styles.imageText}>
+            <div className={styles.imageContainer}>
+              <Image className={styles.img} src={reyImg} alt="rey" />
             </div>
-            
-            <div className={styles.CvGit}>
-                <div className={styles.Cv}>
-                    <Image src={cv} alt="cv" width={100} height={100} />
-                </div> 
-                <div className={styles.Git}>
-                    <Image src={github} alt="git" width={100} height={100} />
-                </div>
+            <div className={styles.textContainer}>
+              <h1>Hi &#128075;</h1>
+              <h3>i am Rey</h3>
+              <p>please dont look a lot on my pic and i use Arch btw ...</p>
             </div>
+          </div>
+
+          <div className={styles.CvGit}>
+            <div className={styles.Cv}>
+              <Image src={cv} alt="cv" className={styles.icon} />
+            </div>
+            <div className={styles.Git}>
+              <Image src={github} alt="git" className={styles.icon} />
+            </div>
+          </div>
         </div>
         <div className={styles.right}>
           <div className={styles.titleBar}>
