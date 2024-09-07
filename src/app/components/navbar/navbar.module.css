@@ -3,24 +3,27 @@
   display: flex;
   flex-direction: row;
 }
-.joinMe {
-  background: #080c1299;
-  backdrop-filter: blur(8px);
+
+
+
+.buttonMove , .button{
+    color: white;
+    background: #FFAA3350;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    cursor: pointer;
 }
-.hamburger {
-  height: calc(100vh - 65px);
-  margin: 12px 0 0 5px;
-}
-.icon {
-  margin: auto;
-  filter: invert(99%) sepia(0%) saturate(1576%) hue-rotate(-21deg)
-    brightness(0%) contrast(73%);
+.button{
+    top: 0;
+    left: 0;
 }
 
-.icon:hover {
-  filter: invert(99%) sepia(0%) saturate(1576%) hue-rotate(-21deg)
-    brightness(100%) contrast(73%);
+.buttonMove:hover , .button:hover{
+    background: #FFAA3370 ;
 }
+
 .leftSide {
   background: #080c1299;
   backdrop-filter: blur(8px);
