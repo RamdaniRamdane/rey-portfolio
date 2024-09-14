@@ -1,9 +1,18 @@
-.bufferContainer {
+.bufferLaptop {
   height: 20px;
   display: flex;
   flex-direction: row;
 }
 
-.button {
-  background: white;
+.bufferMobile{
+    height: 40px;
+    background: #11151C;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding: 5px;
+}
+.github{
+    color:white;
+    cursor: pointer;
 }

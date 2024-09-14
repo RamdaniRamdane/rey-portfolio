@@ -4,31 +4,23 @@
   flex-direction: row;
 }
 
-.buttonMove,
 .button {
   color: white;
-  background: #ffaa3350;
-  height: 20px;
+  height: 40px;
   position: absolute;
-  top: 0;
-  left: 200px;
+  top: 5;
+  left: 5;
   cursor: pointer;
-}
-.button {
-  top: 0;
-  left: 0;
+  margin: 5px;
+  z-index: 1;
 }
 
-.buttonMove:hover,
-.button:hover {
-  background: #ffaa3370;
-}
 
-.leftSide {
+.leftSide , .leftSidePhone  {
   background: #080c1299;
   backdrop-filter: blur(8px);
   height: 100vh;
-  width: 200px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -46,7 +38,8 @@
   width: 100%;
   padding: 0;
   display: flex;
-  text-align: start;
+  flex-direction: row ;
+  justify-content:space-between ;
 }
 
 .logo {
@@ -64,11 +57,15 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-  font-size: 1.8rem;
-  margin-left: 3px;
-  font-weight: 200;
+  font-size: 1.9rem;
+  font-weight: 900;
   color: #eeeeee;
-  margin-bottom: 10px;
+}
+.closebtn{
+    color:white ;
+    font-weight: 200;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
 .folderName {
@@ -87,17 +84,19 @@
     "Helvetica Neue",
     sans-serif;
   color: #ffaa33;
-  font-weight: 500;
+  font-weight: 600;
   padding: 5px 0px 0px 20px;
+  font-size: 1.5rem;
 }
 
 .pwdName {
   color: #ff8f40;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
   font-style: italic;
   margin-bottom: 5px;
   transition: 0.3s;
+  margin : 5px 0
 }
 
 .pwdName:hover {
@@ -109,6 +108,7 @@
   margin-left: 30px;
   border-left: solid 1px #9993;
   color: #666;
+  font-size: 1.2rem;
 }
 
 .fileName:hover {
@@ -122,4 +122,10 @@
   background: #191e2a90;
   color: #eee;
   transition: 0.3s;
+  font-size: 1.2rem;
+}
+
+.leftSidePhone{
+  width: 300px;
+  box-shadow: 0 0 200px 0px #000;
 }

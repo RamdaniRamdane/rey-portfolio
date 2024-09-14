@@ -7,29 +7,48 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import hamburger from "../../../../public/ham.svg";
 import Image from "next/image";
+import { useMediaQuery } from 'usehooks-ts'
 
 function NavBar() {
-  const [indicatorLeftSide, setIndicatorLeftSide] = useState(-1);
+  const isDesctop = useMediaQuery('(min-width: 640px)' , {
+      initializeWithValue:false 
+  })
+
+
+  const [indicatorLeftSide, setIndicatorLeftSide] = useState( -1 ); 
   const [indicatorAbout, setIndicatorAbout] = useState(1);
   const [indicatorProjects, setIndicatorProjects] = useState(1);
   const [indicatorContact, setIndicatorContact] = useState(1);
   const [indicatorHobies, setIndicatorHobies] = useState(1);
   const route = usePathname();
   const pathname = route;
+
+
+
+  const handleLeftSideDisplay= useCallback(()=> {
+    if(!isDesctop) setIndicatorLeftSide((a) => a * -1);
+  },[isDesctop])
+
+
+
   const handleKeyPress = useCallback((event: KeyboardEvent) => {
     event.key == "t" && handleLeftSideDisplay();
-  }, []);
+  }, [handleLeftSideDisplay]);
 
-  useEffect(() => {
+
+  useEffect(() =>{
     document.addEventListener("keydown", handleKeyPress);
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
   }, [handleKeyPress]);
 
-  function handleLeftSideDisplay() {
-    setIndicatorLeftSide((a) => a * -1);
-  }
+
+
+  useEffect(() => {
+    setIndicatorLeftSide(isDesctop ? 1 : -1);
+  }, [isDesctop]);
+
   function handleAboutClick() {
     setIndicatorAbout((a) => a * -1);
   }
@@ -78,27 +97,28 @@ function NavBar() {
   ];
   return (
     <div className={styles.container}>
-      {indicatorLeftSide > 0 && (
-        <div className={styles.leftSide}>
+      {  indicatorLeftSide > 0  && (
+        <div className={isDesctop ? styles.leftSide : styles.leftSidePhone}>
           <div className={styles.logoContainer}>
-            <h1 className={styles.logo}>REY</h1>
+            <Link href="/" className={styles.logo}>REY</Link>
+            { !isDesctop && (<h1  className={styles.closebtn} onClick = {handleLeftSideDisplay}> x </h1>) }
           </div>
           <ul className={styles.links}>
             <li className={styles.pwdName}>~/personal/portfolio{pathname}</li>
 
             {Folders.map((folder, index) => (
               <div key={index}>
-                <li
+                <a 
                   className={styles.folderName}
                   onClick={() => handleClick(folder.name)}
                 >
                   <BiSolidFolder /> {folder.name}
-                </li>
+                </a>
                 {folder.indicator > 0 && (
                   <>
                     {folder.files.map((file, subindex) => (
                       <div key={subindex}>
-                        <Link href={file.path}>
+                        <Link href={file.path} onClick={handleLeftSideDisplay}>
                           <li
                             className={
                               pathname === file.path
@@ -118,12 +138,11 @@ function NavBar() {
           </ul>
         </div>
       )}
-      <div
-        className={indicatorLeftSide > 0 ? styles.buttonMove : styles.button}
-        onClick={handleLeftSideDisplay}
-      >
-        <Image src={hamburger} alt="tree" width={20} height={20} />
+      { !isDesctop && indicatorLeftSide < 0 && (
+      <div className={styles.button} onClick={handleLeftSideDisplay}>
+        <Image src={hamburger} alt="ham" width={30} height={30} />
       </div>
+      )}
     </div>
   );
 }
