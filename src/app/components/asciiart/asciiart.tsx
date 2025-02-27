@@ -6,7 +6,7 @@ const TypingAnimation = () => {
   useEffect(() => {
     startTyping(
       "typingText",
-      "hello world i am Ramdani Ramdane am born on 2002 , I am a develloper , my blaz is REY , m also an artist and a gym lover etc adbcuaidxbkcsq </br> have a good vibe when u navigate on my portfolio and apreciate it if u are a neovim user :) </br> <h3> > explore </h3> ",
+      "I'm Ramdani Ramdane, a Linux enthusiast, problem solver, and cybersecurity explorer. I love breaking down systems, optimizing workflows, and decoding structured patterns in data and visuals.",
       100,
     );
   }, []);

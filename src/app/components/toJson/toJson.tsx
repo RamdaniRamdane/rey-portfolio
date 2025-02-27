@@ -5,13 +5,13 @@ const { jsonSyntax } = require("../../scripts/toJson");
 
 const jsonData = {
   name: "Ramdani - Ramdane",
-  title: "Web Developer | Software Engineer",
+  title: "Web Developer | Software Engineer | CyberSecurity enthusiast ",
   location: "Tizi Ouzou , Algerie",
   contact: {
     email: "ramdanramdane123@gmail.com",
     phone: "+213 552 45 17 98",
-    website: "https://www.yourwebsite.com",
-    linkedin: "https://www.linkedin.com/in/yourprofile",
+    website: "https://ramdaniramdane.github.io/rey-portfolio/",
+    linkedin: "https://www.linkedin.com/in/ramdane-ramdani-1a5a37252/",
     github: "https://github.com/RamdaniRamdane",
   },
   skills: [

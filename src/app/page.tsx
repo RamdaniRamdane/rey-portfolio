@@ -14,7 +14,6 @@ export default function Home() {
       <div className={styles.card}>
         <TypingAnimation />
       </div>
-      <p>keybind : press t to toggle the nvim-tree</p>
     </div>
   );
 }

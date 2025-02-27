@@ -10,10 +10,13 @@
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss,md}'"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.9",
     "next": "14.2.5",
+    "postcss": "^8.5.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.3.0",
+    "tailwindcss": "^4.0.9",
     "typewriter-effect": "^2.21.0",
     "usehooks-ts": "^3.1.0"
   },
