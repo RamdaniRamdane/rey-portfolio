@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Title from "../components/title/title";
 import { FiGithub, FiExternalLink, FiStar, FiCode, FiLoader } from "react-icons/fi";
-import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiPython, SiCss3, SiHtml5, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiVuedotjs, SiTailwindcss } from "react-icons/si";
+import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiPython, SiCss3, SiHtml5, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiVuedotjs, SiTailwindcss ,SiGnubash ,SiLua} from "react-icons/si";
 
 // Map to convert GitHub languages to icons
 const techIcons: Record<string, JSX.Element> = {
@@ -18,25 +18,31 @@ const techIcons: Record<string, JSX.Element> = {
   MongoDB: <SiMongodb className="text-green-400" />,
   PostgreSQL: <SiPostgresql className="text-blue-600" />,
   Vue: <SiVuedotjs className="text-green-400" />,
-  Tailwind: <SiTailwindcss className="text-cyan-400" />
+  Tailwind: <SiTailwindcss className="text-cyan-400" />,
+  Bash: <SiGnubash className="text-white" />,
+  Lua: <SiLua className="text-[#00007f]" />
 };
 
 // Helper function to determine tech stack based on repo data
 const determineTechStack = (repo: Record<string, any>): string[] => {
   const techStack: string[] = [];
-  if (repo.language) techStack.push(repo.language);
-  
-  const nameAndDesc = `${repo.name} ${repo.description || ""}`.toLowerCase();
-  
+  const nameAndDesc = `${repo.name} ${repo.description || ""} ${repo.language}`.toLowerCase();
+  console.log(nameAndDesc)
   if (nameAndDesc.includes("react")) techStack.push("React");
   if (nameAndDesc.includes("next")) techStack.push("Next.js");
   if (nameAndDesc.includes("vue")) techStack.push("Vue");
-  if (nameAndDesc.includes("node")) techStack.push("Node");
+  if (nameAndDesc.includes("node ")) techStack.push("Node");
   if (nameAndDesc.includes("express")) techStack.push("Express");
   if (nameAndDesc.includes("mongo")) techStack.push("MongoDB");
   if (nameAndDesc.includes("postgres")) techStack.push("PostgreSQL");
   if (nameAndDesc.includes("tailwind")) techStack.push("Tailwind");
-
+  if (nameAndDesc.includes("python")) techStack.push("Python");
+  if (nameAndDesc.includes("shell")) techStack.push("Bash");
+  if (nameAndDesc.includes("typescript")) techStack.push("TypeScript");
+  if (nameAndDesc.includes("css")) techStack.push("CSS");
+  if (nameAndDesc.includes("lua")) techStack.push("Lua");
+  if (nameAndDesc.includes("javascript")) techStack.push("JavaScript");
+  console.log(techStack)
   return Array.from(new Set(techStack)).slice(0, 4);
 };
 
@@ -49,7 +55,7 @@ const ProjectsGrid = () => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://api.github.com/users/RamdaniRamdane/repos?sort=updated&per_page=8');
+        const response = await fetch('https://api.github.com/users/RamdaniRamdane/repos?sort=updated&per_page=11');
         if (!response.ok) {
           throw new Error('Failed to fetch repositories');
         }
@@ -58,7 +64,7 @@ const ProjectsGrid = () => {
           console.log(project.name)
           if(project.name == "veloria") project.homepage="https://veloria-wnns.onrender.com/"
         })
-        data[data.length]={ name: "UniVibe", description: "Social Network made as accademic projet", language: "JavaScript", html_url: "#", homepage: "https://uni-vibe.onrender.com/" }
+        data[data.length]={ name: "UniVibe", description: "Social Network made as accademic projet", language: "node express tailwind mongo next", html_url: "#", homepage: "https://uni-vibe.onrender.com/" }
         setProjects(data);
       } catch (err) {
         if (err instanceof Error) {
