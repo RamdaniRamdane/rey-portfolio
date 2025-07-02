@@ -54,6 +54,11 @@ const ProjectsGrid = () => {
           throw new Error('Failed to fetch repositories');
         }
         const data = await response.json();
+        data.map((project,indes)=>{
+          console.log(project.name)
+          if(project.name == "veloria") project.homepage="https://veloria-wnns.onrender.com/"
+        })
+        data[data.length]={ name: "UniVibe", description: "Social Network made as accademic projet", language: "JavaScript", html_url: "#", homepage: "https://uni-vibe.onrender.com/" }
         setProjects(data);
       } catch (err) {
         if (err instanceof Error) {
