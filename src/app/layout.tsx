@@ -6,7 +6,7 @@ import NavBar from "./components/navbar/navbar";
 import Buffer from "./components/buffer/buffer";
 import styles from "./page.module.css";
 import LineCounter from "./components/linecounter/linecouter";
-
+import VimCmd from "./components/vimCmd/vimCmd";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function RootLayout({
           </div>
           </main>
           <div className={styles.command}>
-            <p>:colorScheme</p>
+            <VimCmd/> 
           </div>
         </main>
       </body>
