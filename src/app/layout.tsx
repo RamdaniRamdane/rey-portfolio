@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import '../../themes.css';    
 import "./globals.css";
 import NavBar from "./components/navbar/navbar";
 import Buffer from "./components/buffer/buffer";
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <main className={styles.containerg}>
         <main className={styles.container}>
           <div className={styles.leftSide}>
             <NavBar />
@@ -33,6 +35,10 @@ export default function RootLayout({
                 {children}
               </div>
             </div>
+          </div>
+          </main>
+          <div className={styles.command}>
+            <p>:colorScheme</p>
           </div>
         </main>
       </body>

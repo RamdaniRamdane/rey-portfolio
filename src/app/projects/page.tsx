@@ -60,7 +60,7 @@ const ProjectsGrid = () => {
           throw new Error('Failed to fetch repositories');
         }
         const data = await response.json();
-        data.map((project,indes)=>{
+        data.map((project : any)=>{
           console.log(project.name)
           if(project.name == "veloria") project.homepage="https://veloria-wnns.onrender.com/"
         })
@@ -91,7 +91,7 @@ const ProjectsGrid = () => {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center py-20">
-        <FiLoader className="w-12 h-12 text-purple-500 animate-spin" />
+        <FiLoader className="w-12 h-12 text-accent-color animate-spin" />
         <p className="mt-4 text-gray-400">Loading projects...</p>
       </div>
     );
@@ -106,7 +106,7 @@ const ProjectsGrid = () => {
           href="https://github.com/RamdaniRamdane" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="mt-4 px-4 py-2 bg-[#24292e] hover:bg-[#2c3136] text-white rounded-lg flex items-center transition-colors"
+          className="mt-4 px-4 py-2 bg-bg-text hover:bg-[#2c3136] text-white rounded-lg flex items-center transition-colors"
         >
           <FiGithub className="mr-2" /> Visit GitHub Profile
         </a>
@@ -122,11 +122,11 @@ const ProjectsGrid = () => {
         return (
           <div 
             key={index} 
-            className="group relative bg-[#11151C] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-800 hover:border-purple-500/50 flex flex-col h-full"
+            className="group relative bg-article-bg rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-800 hover:border-accent-color flex flex-col h-full"
           >
             <div className="p-5 flex-1">
               <div className="flex justify-between items-start mb-4">
-                <FiCode className="text-purple-500 w-6 h-6" />
+                <FiCode className="text-accent-color w-6 h-6" />
                 {project.stargazers_count > 0 && (
                   <div className="flex items-center text-yellow-500 text-sm">
                     <FiStar className="mr-1" />
@@ -135,7 +135,7 @@ const ProjectsGrid = () => {
                 )}
               </div>
               
-              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-accent-color transition-colors">
                 {project.name}
               </h3>
               

@@ -1,4 +1,29 @@
 @import "tailwindcss";
+@theme {
+  --color-main-bg: var(--main-bg);
+  --color-bg-text: var(--bg-text);
+  --color-text-color: var(--text-color);
+  --color-accent-color: var(--accent-color);
+  --color-titlebar-bg: var(--titlebar-bg);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-sidebar-hover-bg: var(--sidebar-hover-bg);
+  --color-explorer-bg: var(--explorer-bg);
+  --color-explorer-hover-bg: var(--explorer-hover-bg);
+  --color-explorer-border: var(--explorer-border);
+  --color-tabs-bg: var(--tabs-bg);
+  --color-tab-bg: var(--tab-bg);
+  --color-tab-active-bg: var(--tab-active-bg);
+  --color-tab-border: var(--tab-border);
+  --color-bottombar-bg: var(--bottombar-bg);
+  --color-bottombar-border: var(--bottombar-border);
+  --color-button-bg: var(--button-bg);
+  --color-button-text: var(--button-text);
+  --color-bottombar-hover-bg: var(--bottombar-hover-bg);
+  --color-scrollbar-track-bg: var(--scrollbar-track-bg);
+  --color-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
+  --color-article-bg: var(--article-bg);
+
+}
 :root {
   --max-width: 1100px;
   --border-radius: 12px;

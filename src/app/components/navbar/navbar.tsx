@@ -88,11 +88,11 @@ function NavBar() {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex h-full">
       {indicatorLeftSide > 0 && (
         <div 
           className={`
-            h-screen w-64 flex flex-col bg-[#11151C]/90 backdrop-blur-md
+            h-full w-64 flex flex-col bg-sidebar-bg/90 backdrop-blur-md
             border-r border-zinc-700
             ${isDesktop ? 'relative' : 'fixed left-0 top-0 z-20 w-72 shadow-2xl'}
           `}
