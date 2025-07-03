@@ -38,36 +38,27 @@ export default function About() {
         {/* Left Column - Profile Section */}
         <div className="flex flex-col w-full lg:w-1/2 gap-6">
           {/* Profile Card with improved design */}
-          <div className="bg-[#11151C] rounded-xl  p-6 shadow-lg border border-zinc-800 h-auto lg:h-[70%]">
-            <div className="flex flex-col sm:flex-row items-center px-10 gap-5">
-              {/* Profile picture with animated glow effect on hover */}
-              <div className="relative group ">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full opacity-60 blur-sm group-hover:opacity-100 transition duration-500"></div>
-                <div className="relative size-28 sm:size-32 overflow-hidden rounded-full border-2 border-purple-500 flex-shrink-0">
-                  <Image 
+
+
+
+          <div className="bg-article-bg flex flex-col sm:flex-row items-center justify-center rounded-xl  shadow-lg h-full lg:h-[70%]">
+            <div className=" h-[45%] w-[70%]  sm:h-[90%] sm:w-[45%] sm:flex sm:items-center">
+                   <Image 
                     src={reyImg} 
                     alt="Rey's profile picture" 
-                    className="object-cover w-full h-full transform group-hover:scale-105 transition duration-500"
+                    className="rounded-xl border-2 border-accent-color "
                     priority
                   />
-                </div>
-              </div>
-              
-              {/* Profile text with better typography and spacing */}
-              <div className="text-center sm:text-left mt-4 sm:mt-0">
-                <div className="relative overflow-hidden pb-2">
-                  <h1 className="text-3xl font-bold text-white relative z-10">
-                    Hi <span className="inline-block animate-bounce">👋</span>
-                  </h1>
-                  <div className="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded"></div>
-                </div>
-                <h3 className="text-xl md:text-2xl font-medium text-purple-400 mb-2">I am Rey</h3>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md">
-                  please dont look a lot on my pic and i use Arch btw ...
+             
+            </div>
+            <div className=" h-[45%] w-[70%] flex items-center justify-center  sm:h-[90%] sm:w-[45%] ">
+              <div className="w-[90%] h-[90%] flex items-start flex-col gap-5 sm:justify-center">              
+                <h1 className="text-accent-color font-bold text-2xl border-b-3">HI</h1>
+                <h2>i am rey</h2>
+                <p className="text-start">
+                    please dont look a lot on my pic and i use Arch btw ...
                 </p>
-                
-                {/* Additional info section for desktop/tablet, hidden on mobile */}
-                <div className="hidden sm:block mt-4">
+                <div className=" sm:block mt-4">
                   <div className="flex gap-4 text-xs text-zinc-400">
                     <div className="flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-green-500"></span>
@@ -81,12 +72,15 @@ export default function About() {
                 </div>
               </div>
             </div>
+
           </div>
           
+
+
           {/* Social Links - Now with hover effects and better mobile layout */}
           <div className="grid grid-cols-2 gap-4 h-auto lg:h-[30%]">
             <a href="#" className="block group h-full">
-              <div className="bg-[#11151C] rounded-xl flex flex-col justify-center items-center p-4 h-full border border-zinc-800/50 shadow-md hover:shadow-lg hover:border-purple-500/30 transition-all duration-300">
+              <div className="bg-article-bg rounded-xl flex flex-col justify-center items-center p-4 h-full border border-zinc-800/50 shadow-md hover:shadow-lg hover:border-accent-color transition-all duration-300">
                 <Image 
                   src={cv} 
                   alt="Resume/CV" 
@@ -97,7 +91,7 @@ export default function About() {
             </a>
             
             <a href="#" className="block group h-full">
-              <div className="bg-[#11151C] rounded-xl flex flex-col justify-center items-center p-4 h-full border border-zinc-800/50 shadow-md hover:shadow-lg hover:border-purple-500/30 transition-all duration-300">
+              <div className="bg-article-bg rounded-xl flex flex-col justify-center items-center p-4 h-full border border-zinc-800/50 shadow-md hover:shadow-lg hover:border-accent-color transition-all duration-300">
                 <Image 
                   src={github} 
                   alt="GitHub Profile" 
@@ -111,7 +105,7 @@ export default function About() {
         
         {/* Right Column - JSON Viewer with responsive design */}
         <div className="flex flex-col w-full lg:w-1/2 rounded-xl overflow-hidden shadow-lg border border-zinc-800 h-auto lg:h-[600px] mt-6 lg:mt-0">
-          <div className="bg-[#11151C] p-3 flex items-center justify-between">
+          <div className="bg-article-bg p-3 flex items-center justify-between">
             <div className="flex items-center">
               <div className="flex space-x-2 mr-4">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -126,13 +120,65 @@ export default function About() {
             </div>
           </div>
           
-          <div className="bg-black flex-1 overflow-auto h-[400px] lg:h-auto">
+          <div className="bg-black/30 flex-1 overflow-auto h-[400px] lg:h-auto">
             <div className="p-4">
               <Json />
             </div>
           </div>
         </div>
       </div>
+
+    
+      {/*
+            <div className="flex flex-col sm:flex-row h-full items-center px-10 gap-5">
+              <div className="relative group ">
+                <div className="relative size-28 sm:size-32 overflow-hidden rounded-full border-2 border-accent-color flex-shrink-0">
+                  <Image 
+                    src={reyImg} 
+                    alt="Rey's profile picture" 
+                    className="object-cover w-full h-full transform group-hover:scale-105 transition duration-500"
+                    priority
+                  />
+                </div>
+              </div>
+              
+              <div className="text-center  h-full sm:text-left mt-10 sm:mt-0 border-3 border-blue-500 p-10 ">
+                <div className="relative overflow-hidden pb-2">
+                  <h1 className="text-3xl font-bold text-white relative z-10">
+                    Hi <span className="inline-block">👋</span>
+                  </h1>
+                  <div className="absolute bottom-0 left-0 w-12 h-1 bg-gradient-to-r from-accent-color to-accent-color/70 rounded"></div>
+                </div>
+                <h3 className="text-xl md:text-2xl font-medium text-accent-color mb-10">I am Rey</h3>
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md">
+                  please dont look a lot on my pic and i use Arch btw ...
+                  keep the unix mindset , and dont let your system bloated 
+                  do one thing and do it well
+                </p>
+                
+                <div className="hidden sm:block mt-4">
+                  <div className="flex gap-4 text-xs text-zinc-400">
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                      <span>Available for work</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                      <span>Software Engineer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+      */}
+
+
+
+
+
     </div>
   );
 }

@@ -1,7 +1,7 @@
 .lineCounter {
   width: inherit;
   height: calc(100vh - 20px);
-  background: #080c1299;
+  background: var(--main-bg);
   backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;

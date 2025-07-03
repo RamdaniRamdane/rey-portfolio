@@ -29,7 +29,7 @@
 }
 
 .gridItem:hover {
-  box-shadow: 0 0 5px #ff8f40;
+  box-shadow: 0 0 5px var(--accent-color);
   transition: 0.3s;
 }
 .gridItem:hover .icon {

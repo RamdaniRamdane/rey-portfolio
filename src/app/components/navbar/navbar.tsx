@@ -92,7 +92,7 @@ function NavBar() {
       {indicatorLeftSide > 0 && (
         <div 
           className={`
-            h-full w-64 flex flex-col bg-sidebar-bg/90 backdrop-blur-md
+            h-full w-64 flex flex-col bg-sidebar-bg backdrop-blur-md
             border-r border-zinc-700
             ${isDesktop ? 'relative' : 'fixed left-0 top-0 z-20 w-72 shadow-2xl'}
           `}
@@ -119,7 +119,7 @@ function NavBar() {
           {/* File Explorer */}
           <div className="flex-1 overflow-y-auto py-2 font-mono">
             {/* Path display */}
-            <div className="px-4 py-2 text-amber-500 text-xs italic opacity-80 border-b border-zinc-800/50">
+            <div className="px-4 py-2 text-accent-color text-xs italic opacity-80 border-b border-zinc-800/50">
               ~/personal/portfolio{pathname}
             </div>
             
@@ -130,9 +130,9 @@ function NavBar() {
                     {/* Folder */}
                     <button
                       onClick={() => handleClick(folder.name)}
-                      className="w-full text-left px-3 py-1.5 flex items-center gap-2 text-amber-400 hover:bg-zinc-800/50 rounded group transition-colors"
+                      className="w-full text-left px-3 py-1.5 flex items-center gap-2 text-accent-color hover:bg-sidebar-hover-bg/50 rounded group transition-colors"
                     >
-                      <BiSolidFolder className="h-4 w-4 group-hover:text-amber-300" />
+                      <BiSolidFolder className="h-4 w-4 group-hover:text-accent-color" />
                       <span className="text-base">{folder.name}</span>
                     </button>
                     
@@ -146,9 +146,9 @@ function NavBar() {
                               onClick={handleLeftSideDisplay}
                               className={`
                                 block pl-4 pr-2 py-1.5 text-sm group flex items-center gap-2
-                                hover:bg-zinc-800/70 transition-colors
+                                hover:bg-sidebar-hover-bg/50 transition-colors
                                 ${pathname === file.path 
-                                  ? 'bg-zinc-800/90 text-zinc-200 border-l-2 border-purple-500' 
+                                  ? 'bg-sidebar-hover-bg text-zinc-200 border-l-2 border-purple-500' 
                                   : 'text-zinc-500 hover:text-zinc-300'}
                               `}
                             >

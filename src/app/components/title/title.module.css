@@ -6,5 +6,5 @@
 }
 
 .textColored {
-  color: #ff8f40;
+  color: var(--accent-color);
 }
