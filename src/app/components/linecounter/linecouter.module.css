@@ -14,4 +14,8 @@
   color: #88888866;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 0.8rem;
+  cursor:pointer;
+}
+.lineCounter p:hover{
+  color: var(--accent-color)
 }

@@ -27,10 +27,8 @@ function VimCmd(){
   const setTheme = (theme: string) => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
-    console.log(theme)
   };
-
-  return (
+   return (
     <>
       <input type="text" value={cmd} onChange={(e:any)=>{setCmd(e.target.value)}} onKeyDown={handleKeyDown} placeholder="only command working for now :colorScheme dracula|ayu-dark|ayu-mirage|nord|night-owl" className="w-full h-full border-none focus:border-none focus:outline-none" />
     </>

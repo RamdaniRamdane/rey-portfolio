@@ -25,7 +25,7 @@ export default function LineCounter() {
     <>
       <div id="line" className={styles.lineCounter}>
         {nums.map((num, index) => (
-          <p key={index}>{num}</p>
+          <p key={index} className="hover:translate-x-1 hover:z-99 ">{num}</p>
         ))}
       </div>
     </>

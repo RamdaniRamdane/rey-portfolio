@@ -1,33 +1,33 @@
 "use client";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useContext } from "react";
 import { BiSolidFolder } from "react-icons/bi";
 import { FiCode, FiX, FiMenu } from "react-icons/fi";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from 'usehooks-ts';
+import { SideBarContext, useSideBarContext } from "@/app/context/naveBarContext";
 
 function NavBar() {
+  
   const isDesktop = useMediaQuery('(min-width: 640px)', {
     initializeWithValue: false
   });
-  
-  const [indicatorLeftSide, setIndicatorLeftSide] = useState(-1);
+  const { sb,setSb }=useSideBarContext() 
   const [indicatorAbout, setIndicatorAbout] = useState(1);
   const [indicatorProjects, setIndicatorProjects] = useState(1);
   const [indicatorContact, setIndicatorContact] = useState(1);
   const [indicatorHobies, setIndicatorHobies] = useState(1);
-  
   const route = usePathname();
   const pathname = route;
   
   const handleLeftSideDisplay = useCallback(() => {
-    if (!isDesktop) setIndicatorLeftSide((a) => a * -1);
-  }, [isDesktop]);
+     setSb((a) => a * -1);
+  }, []);
   
   const handleKeyPress = useCallback((event: KeyboardEvent) => {
-    event.key === "t" && handleLeftSideDisplay();
-  }, [handleLeftSideDisplay]);
+      if (isDesktop) event.key === "Control" && handleLeftSideDisplay();
+  }, [handleLeftSideDisplay ,isDesktop]);
   
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
@@ -37,8 +37,9 @@ function NavBar() {
   }, [handleKeyPress]);
   
   useEffect(() => {
-    setIndicatorLeftSide(isDesktop ? 1 : -1);
-  }, [isDesktop]);
+    setSb( isDesktop ? 1 : -1);
+    console.log(isDesktop)
+  }, [isDesktop,sb]);
   
   const handleClick = (name: string) => {
     switch (name) {
@@ -89,7 +90,7 @@ function NavBar() {
 
   return (
     <div className="flex h-full">
-      {indicatorLeftSide > 0 && (
+      {sb > 0 && (
         <div 
           className={`
             h-full w-64 flex flex-col bg-sidebar-bg backdrop-blur-md
@@ -168,13 +169,13 @@ function NavBar() {
           {/* Status bar */}
           <div className="bg-[#0D1117] px-3 py-1.5 text-xs text-zinc-500 border-t border-zinc-800 flex justify-between">
             <span>vim mode</span>
-            <span>Press T to toggle</span>
+            <span>Press e to toggle</span>
           </div>
         </div>
       )}
       
       {/* Mobile menu button */}
-      {!isDesktop && indicatorLeftSide < 0 && (
+      {!isDesktop && sb < 0 && (
         <button
           onClick={handleLeftSideDisplay}
           className="fixed top-4 left-4 z-10 p-2 bg-zinc-900/80 backdrop-blur-sm rounded-md text-white hover:bg-zinc-800 transition-colors"
