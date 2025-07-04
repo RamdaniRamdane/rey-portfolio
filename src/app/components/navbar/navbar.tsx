@@ -22,7 +22,7 @@ function NavBar() {
   const pathname = route;
   
   const handleLeftSideDisplay = useCallback(() => {
-     setSb((a) => a * -1);
+     setSb(sb*-1);
   }, []);
   
   const handleKeyPress = useCallback((event: KeyboardEvent) => {
