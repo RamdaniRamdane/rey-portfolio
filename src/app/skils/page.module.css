@@ -11,11 +11,10 @@
 }
 
 .gridItem {
-  background: #080c1255;
+  background: var(--article-bg);
   width: 130px;
   height: 130px;
   margin: 10px;
-  background: #11151c;
   border-radius: 15px;
   display: flex;
   justify-content: center;
