@@ -25,16 +25,16 @@ function NavBar() {
      setSb(sb*-1);
   }, []);
   
-  const handleKeyPress = useCallback((event: KeyboardEvent) => {
-      if (isDesktop) event.key === "Control" && handleLeftSideDisplay();
-  }, [handleLeftSideDisplay ,isDesktop]);
-  
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyPress);
-    return () => {
-      document.removeEventListener("keydown", handleKeyPress);
-    };
-  }, [handleKeyPress]);
+//  const handleKeyPress = useCallback((event: KeyboardEvent) => {
+//      if (isDesktop) event.key === "Control" && handleLeftSideDisplay();
+//  }, [handleLeftSideDisplay ,isDesktop]);
+//  
+//  useEffect(() => {
+//    document.addEventListener("keydown", handleKeyPress);
+//    return () => {
+//      document.removeEventListener("keydown", handleKeyPress);
+//    };
+//  }, [handleKeyPress]);
   
   useEffect(() => {
     setSb( isDesktop ? 1 : -1);
@@ -138,21 +138,21 @@ function NavBar() {
                     
                     {/* Files */}
                     {folder.indicator > 0 && (
-                      <ul className="ml-4 border-l border-zinc-700 mt-1">
+                      <ul className="ml-2 mt-1">
                         {folder.files.map((file, subindex) => (
                           <li key={subindex}>
                             <Link 
                               href={file.path}
                               onClick={()=> (!isDesktop) && setSb(-1)}
                               className={`
-                                block pl-4 pr-2 py-1.5 text-sm group flex items-center gap-2
-                                hover:bg-sidebar-hover-bg/50 transition-colors
+                                block !ml-4  py-1.5 text-sm group flex items-center gap-2
+                                hover:bg-sidebar-hover-bg/50 transition-colors 
                                 ${pathname === file.path 
-                                  ? 'bg-sidebar-hover-bg text-zinc-200 border-l-2 border-purple-500' 
+                                  ? 'bg-sidebar-hover-bg text-zinc-200 ' 
                                   : 'text-zinc-500 hover:text-zinc-300'}
                               `}
                             >
-                              <FiCode className="h-3.5 w-3.5 opacity-70" />
+                              <div className=" border-l-2 border-b-2 rounded-bl-sm border-zinc-700  w-[10px] h-[20px] relative -top-[12px] left-0"></div> <FiCode className="h-3.5 w-3.5 opacity-70" />
                               {file.name}
                             </Link>
                           </li>
