@@ -8,6 +8,7 @@ import styles from "./page.module.css";
 import LineCounter from "./components/linecounter/linecouter";
 import VimCmd from "./components/vimCmd/vimCmd";
 import SideBarProvider from "./context/naveBarContext";
+import ThemeProvider from "./context/themeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
 
       <body className={inter.className}>
-
+   <ThemeProvider> 
     <SideBarProvider>
         <main className={styles.containerg}>
         <main className={styles.container}>
@@ -47,6 +48,8 @@ export default function RootLayout({
         </main>
 
     </SideBarProvider>
+    
+   </ThemeProvider> 
       </body>
 
     </html>

@@ -9,11 +9,13 @@ type SideBarContextType={
 export const SideBarContext = createContext<SideBarContextType |null >(null)
 
 function SideBarProvider({children}:{children:ReactNode}) {
-  console.log("SideBarProvider mounted");
-  const [sb,setSb]=useState<number>(-1)
 
+  const [sb,setSb]=useState<number>(-1)
+  useEffect(() => {
+    console.log(sb)
+  }, [sb]);
   return (
-    <SideBarContext.Provider value={{ sb, setSb }}>
+    <SideBarContext.Provider value={{ sb , setSb }}>
       {children}
     </SideBarContext.Provider>
  ); 

@@ -1,12 +1,15 @@
 "use client";
 
+import { useThemeContext } from "@/app/context/themeContext";
 import { useState } from "react";
 
 
 
 function VimCmd(){
+  const {theme ,setTheme}=useThemeContext()
   const [cmd ,setCmd]=useState("")
   let parsedCmd:any 
+
   const handleSubmit = () => {
     parsedCmd=cmd.split(" ")
     if(parsedCmd[0]==":") setCmd("error")
@@ -24,13 +27,9 @@ function VimCmd(){
     }
   };
 
-  const setTheme = (theme: string) => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  };
    return (
     <>
-      <input type="text" value={cmd} onChange={(e:any)=>{setCmd(e.target.value)}} onKeyDown={handleKeyDown} placeholder="only command working for now :colorScheme dracula|ayu-dark|ayu-mirage|nord|night-owl" className="w-full h-full border-none focus:border-none focus:outline-none" />
+      <input type="text" value={cmd} onChange={(e:any)=>{setCmd(e.target.value)}} onKeyDown={handleKeyDown} placeholder="only command working for now :colorScheme dracula|ayu-dark|ayu-mirage|nord|night-owl|gruvbox-dark|monkai|one-dark|solarized-dark" className="w-full h-full border-none focus:border-none focus:outline-none" />
     </>
   );
 }

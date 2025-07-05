@@ -42,7 +42,6 @@ const determineTechStack = (repo: Record<string, any>): string[] => {
   if (nameAndDesc.includes("css")) techStack.push("CSS");
   if (nameAndDesc.includes("lua")) techStack.push("Lua");
   if (nameAndDesc.includes("javascript")) techStack.push("JavaScript");
-  console.log(techStack)
   return Array.from(new Set(techStack)).slice(0, 4);
 };
 
@@ -61,7 +60,6 @@ const ProjectsGrid = () => {
         }
         const data = await response.json();
         data.map((project : any)=>{
-          console.log(project.name)
           if(project.name == "veloria") project.homepage="https://veloria-wnns.onrender.com/"
         })
         data[data.length]={ name: "UniVibe", description: "Social Network made as accademic projet", language: "node express tailwind mongo next", html_url: "#", homepage: "https://uni-vibe.onrender.com/" }

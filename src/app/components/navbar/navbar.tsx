@@ -38,8 +38,7 @@ function NavBar() {
   
   useEffect(() => {
     setSb( isDesktop ? 1 : -1);
-    console.log(isDesktop)
-  }, [isDesktop,sb]);
+  }, [isDesktop]);
   
   const handleClick = (name: string) => {
     switch (name) {
@@ -108,7 +107,7 @@ function NavBar() {
             </Link>
             {!isDesktop && (
               <button 
-                onClick={handleLeftSideDisplay}
+                onClick={()=>{setSb(sb*-1)}}
                 className="text-zinc-400 hover:text-white transition-colors"
                 aria-label="Close sidebar"
               >
@@ -144,7 +143,7 @@ function NavBar() {
                           <li key={subindex}>
                             <Link 
                               href={file.path}
-                              onClick={handleLeftSideDisplay}
+                              onClick={()=> (!isDesktop) && setSb(-1)}
                               className={`
                                 block pl-4 pr-2 py-1.5 text-sm group flex items-center gap-2
                                 hover:bg-sidebar-hover-bg/50 transition-colors
@@ -177,7 +176,7 @@ function NavBar() {
       {/* Mobile menu button */}
       {!isDesktop && sb < 0 && (
         <button
-          onClick={handleLeftSideDisplay}
+          onClick={()=>{setSb(1)}}
           className="fixed top-4 left-4 z-10 p-2 bg-zinc-900/80 backdrop-blur-sm rounded-md text-white hover:bg-zinc-800 transition-colors"
           aria-label="Open menu"
         >
