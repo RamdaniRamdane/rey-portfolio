@@ -5,21 +5,21 @@ import Image from "next/image";
 function SkilsDisplay() {
   let skils = [
     "html.svg",
-    "python.svg",
-    "javascript.svg",
-    "linux.svg",
     "css.svg",
+    "javascript.svg",
+    "python.svg",
     "bash.svg",
     "lua.svg",
     "nodejs.svg",
     "express.svg",
     "nextjs.svg",
-    "mongodb.svg",
-    "git.svg",
-    "postman.svg",
-    "neovim.svg",
     "react.svg",
+    "mongodb.svg",
+    "postman.svg",
+    "linux.svg",
     "docker.svg",
+    "git.svg",
+    "neovim.svg",
   ];
   skils.map((skil) => (skil = `../../../public/$[skil]`));
   return (
